@@ -2,20 +2,26 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../models/store.dart';
 import '../repositories/storeRepositories.dart';
 
-final storeRepositoryProvider = Provider<StoreRepository>((ref) {
-  return StoreRepository();
-});
-
 class StoresNotifier extends AsyncNotifier<List<Store>> {
   @override
   Future<List<Store>> build() async {
-    final repository = ref.read(storeRepositoryProvider);
-    return repository.getStores();
+    final storeRepository = ref.read(storeRepositoryProvider);
+    return storeRepository.getStores();
   }
 
   Future<void> refresh() async {
     state = const AsyncValue.loading();
     state = await AsyncValue.guard(() => build());
+  }
+
+  Future<void> bookStore(
+      String storeId, Map<String, dynamic> bookingData) async {
+    state = const AsyncValue.loading();
+    state = await AsyncValue.guard(() async {
+      final storeRepository = ref.read(storeRepositoryProvider);
+      await storeRepository.bookStore(storeId, bookingData);
+      return build(); // Refresh store list
+    });
   }
 
   // Add methods like addStore, updateStore, etc., for other operations
