@@ -1,6 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../models/store.dart';
-import '../repositories/storeRepositories.dart';
+import '../repositories/storeRepo.dart';
 
 class StoresNotifier extends AsyncNotifier<List<Store>> {
   @override

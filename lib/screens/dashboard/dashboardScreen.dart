@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:lucus/notifier/storeNotifier.dart';
 import 'package:lucus/screens/dashboard/storeCard.dart';
+import 'package:lucus/components/bottomNavBar.dart';
 
 class DashboardScreen extends ConsumerWidget {
   const DashboardScreen({super.key});
@@ -51,6 +52,7 @@ class DashboardScreen extends ConsumerWidget {
           ),
         ),
       ),
+      bottomNavigationBar: const BottomNavBar(),
     );
   }
 }
