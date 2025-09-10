@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:lucus/components/bottomNavBar.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});
@@ -27,7 +26,6 @@ class SearchScreen extends StatelessWidget {
           textAlign: TextAlign.center,
         ),
       ),
-      bottomNavigationBar: const BottomNavBar(),
     );
   }
 }

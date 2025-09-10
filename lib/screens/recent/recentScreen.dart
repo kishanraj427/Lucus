@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:lucus/components/bottomNavBar.dart';
 
 class RecentScreen extends StatelessWidget {
   const RecentScreen({super.key});
@@ -27,7 +26,6 @@ class RecentScreen extends StatelessWidget {
           textAlign: TextAlign.center,
         ),
       ),
-      bottomNavigationBar: const BottomNavBar(),
     );
   }
 }

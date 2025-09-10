@@ -5,7 +5,6 @@ import 'package:lucus/models/user.dart';
 import 'package:lucus/screens/profile/settingsSection.dart';
 import 'package:lucus/screens/profile/supportSection.dart';
 import 'package:lucus/utility/appColor.dart';
-import 'package:lucus/components/bottomNavBar.dart';
 import 'package:lucus/screens/profile/profileCard.dart';
 import 'package:lucus/notifier/authNotifier.dart';
 
@@ -92,7 +91,6 @@ class ProfileScreen extends ConsumerWidget {
                     ],
                   ),
                 ),
-      bottomNavigationBar: const BottomNavBar(),
     );
   }
 }
