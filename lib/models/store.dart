@@ -3,6 +3,8 @@ class Store {
   final String name;
   final String description;
   final String imageUrl;
+  final String address;
+  final double pricePerDay;
   final double rating;
 
   const Store({
@@ -11,6 +13,8 @@ class Store {
     required this.description,
     required this.imageUrl,
     required this.rating,
+    required this.address,
+    required this.pricePerDay,
   });
 
   factory Store.fromJson(Map<String, dynamic> json) {
@@ -19,7 +23,9 @@ class Store {
       name: json['name'] as String,
       description: json['description'] as String,
       imageUrl: json['imageUrl'] as String,
+      address: json['address'] as String,
       rating: (json['rating'] as num).toDouble(),
+      pricePerDay: (json['pricePerDay'] as num).toDouble(),
     );
   }
 
@@ -29,7 +35,9 @@ class Store {
       'name': name,
       'description': description,
       'imageUrl': imageUrl,
+      'address': address,
       'rating': rating,
+      'pricePerDay': pricePerDay,
     };
   }
 }

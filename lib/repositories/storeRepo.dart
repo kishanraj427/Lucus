@@ -10,14 +10,20 @@ const mockStoreData = [
     id: '1',
     name: 'Electronics Store',
     description: 'Your one-stop shop for gadgets.',
-    imageUrl: 'https://example.com/electronics.jpg',
+    imageUrl:
+        'https://tse4.mm.bing.net/th/id/OIP.tV-wHA5On28PRHJ6ad-FWwHaEJ?rs=1&pid=ImgDetMain&o=7&rm=3',
+    address: "Road 1, City, Country",
+    pricePerDay: 200,
     rating: 4.5,
   ),
   Store(
     id: '2',
     name: 'Fashion Hub',
     description: 'Latest trends in clothing.',
-    imageUrl: 'https://example.com/fashion.jpg',
+    imageUrl:
+        'https://img.freepik.com/premium-photo/warehouse-storehouse-with-rows-shelves-boxes-industrial-industrial-background_134032-16159.jpg',
+    address: "Road 2, City, Country",
+    pricePerDay: 150,
     rating: 4.2,
   ),
 ];

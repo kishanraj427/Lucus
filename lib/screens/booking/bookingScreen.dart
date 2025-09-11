@@ -7,7 +7,7 @@ class RecentScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Recent'),
+        title: const Text('Booking'),
         actions: [
           IconButton(
             icon: const Icon(Icons.chat_bubble_outline),
