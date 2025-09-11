@@ -6,7 +6,7 @@
     "configurations": [
     
         {
-            "name": "lucus",
+            "name": "lucus (debug mode)",
             "request": "launch",
             "type": "dart"
         },
