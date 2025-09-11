@@ -7,11 +7,9 @@ import '../../utility/appColor.dart';
 
 class LocationWidget extends ConsumerWidget {
   const LocationWidget({super.key});
-
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final locationState = ref.watch(locationProvider);
-
+    final locationState = ref.watch(locationNotifier);
     return Padding(
         padding: const EdgeInsets.all(16.0),
         child: locationState.isLoading
@@ -20,7 +18,7 @@ class LocationWidget extends ConsumerWidget {
                 ? Text('Error: ${locationState.error}')
                 : GestureDetector(
                     onTap: () {
-                      ref.read(locationProvider.notifier).fetchLocation();
+                      ref.read(locationNotifier.notifier).fetchLocation();
                     },
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -32,17 +30,21 @@ class LocationWidget extends ConsumerWidget {
                         ),
                         const SizedBox(width: 4),
                         Text(
-                          '102014, ',
+                          "${locationState.location.pinCode}, ",
                           style: GoogleFonts.plusJakartaSans(
                             fontSize: AppSize.baseEx,
-                            fontWeight: FontWeight.bold,
+                            fontWeight: FontWeight.w700,
                           ),
                         ),
-                        Text(
-                          locationState.location,
-                          style: GoogleFonts.plusJakartaSans(
-                            fontSize: AppSize.baseEx,
-                            fontWeight: FontWeight.bold,
+                        Expanded(
+                          child: Text(
+                            "${locationState.location.street}, ${locationState.location.city}",
+                            style: GoogleFonts.plusJakartaSans(
+                              fontSize: AppSize.baseEx,
+                              fontWeight: FontWeight.w600,
+                            ),
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 1,
                           ),
                         ),
                       ],
